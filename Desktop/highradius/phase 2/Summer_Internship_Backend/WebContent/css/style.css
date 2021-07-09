@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
+
+body{
+    margin: 0;
+    background-color: #3c4c61;
+    overflow: hidden;
+}
+
+::selection {
+    color: rgb(41, 41, 41);
+    background: rgb(255, 255, 136);
+}
+
+#header{
+    height: 50px;
+    width: 100vw;
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#hr_logo{
+    height: 100%;
+}
+
+#company-logo{
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    float: left;
+    left: 10px;
+    line-height: 50px;    
+}
+
+#logo_shape{
+    height: 100%;
+}
+
+
+@media screen and (max-width:1000px){
+    #logo_shape{
+        display: none;
+    }
+} 
+
+#invoice{
+    color: white;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-size: 2em;
+    font-family: roboto, sans-serif;
+    
+}
+
+#table_main{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+#table_body{
+    background-color: #2d4250;
+    height: 95%;
+    width: 98%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+input[type=checkbox] {
+            opacity: 0;
+}
+
+.checkbox{
+			position: absolute;
+            height: 15px;
+            width: 15px;
+            background-color: transparent;
+            border: 1px solid rgb(184, 184, 184);
+            border-radius: 3px;
+} 
+.cb_label:hover input ~ .checkbox {
+            background-color: black;
+        }
+          
+
+        .cb_label input:checked ~ .checkbox {
+            background-color: #14AFF1;
+        }
+          
+        .checkbox:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+          
+        .cb_label input:checked ~ .checkbox:after {
+            display: block;
+        }
+          
+        /* Rotated the rectangle by 45 degree and 
+        showing only two border to make it look
+        like a tickmark */
+        .cb_label .checkbox:after {
+            left: 5px;
+            bottom: 4px;
+            width: 3px;
+            height: 8px;
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+#buttons{
+    width:98%;
+    height: 45px;
+    margin-top: 15px;
+}
+
+button{
+    background-color: #2d4250;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 10px;
+    color: rgb(184, 184, 184);
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 20px;
+    margin: 4px 2px;
+    transition-duration: 0.9s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(184, 184, 184);
+    color: white;
+}
+
+button:active{
+    background-color: rgb(95, 183, 255);
+    transition-duration: 0.1s;
+}
+
+button:focus{
+    border: 1px solid rgb(95, 183, 255);
+    color: white;
+    outline: none;
+}
+
+button:disabled{
+	background-color: #550000;
+}
+button:disabled:hover{
+	background-color: red;
+}
+
+#delete{
+    float: right;
+}
+#edit{  
+    margin-left: 15px;
+    margin-right: 15px;
+    float: right;
+}
+#add{
+    margin-left: 15px;
+    float: right;
+}
+#plus{
+	opacity : 0.3;
+}
+#minus{
+	opacity : 0.3;
+	padding-bottom : 5px;
+}
+
+input[type=text]{
+	float: right;
+	 background-color: #283A46;
+   	 border: 1px solid rgb(184, 184, 184);
+   	 border-radius: 10px;
+     padding: 8px 16px;
+     width : 300px;
+     font-size: 20px;
+     margin: 4px 2px;
+     transition-duration: 0.9s;
+     margin-left: 15px;
+}
+
+input[type=text]:hover{
+    background-color: #191919;
+}
+
+input[type=text]:active{
+    background-color: #293d4a;
+    transition-duration: 0.1s;
+    color: white;
+}
+
+input[type=text]:focus{
+    border: 1px solid rgb(95, 183, 255);
+    outline: none;
+    color: white;
+}
+#search_symbol{
+	position:absolute;
+	margin-left: 94%;
+	margin-top: 0.6%;
+}
+
+ #table_content{
+ 	font-family : 'Ubuntu' , sans-serif;
+ 	font-size: 18px;
+    height: 85%;
+    width: 98%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table{
+	width : 100%;
+	padding: 15px;
+	height : auto;
+}
+
+th{
+	color :  rgb(184, 184, 184);
+	font-weight : 300;
+	background-color: #2d4250;
+	text-align : left;
+	padding: 15px;
+}
+
+td{
+	color : #fff;
+	font-weight : 400;
+	padding: 15px;
+}
+
+tr:nth-child(even){
+	background-color:  #283A46;
+}
+
+#no_result{
+	height: 100%;
+	width: 100%;
+	display : flex;
+	flex-direction : column;
+	align-text: center;
+	justify-content : center;
+	display: none;
+}
+
+#no_result_img{
+	height : 30px;
+	width : 30px;
+	margin-left: auto;
+	margin-right : auto;
+}
+#no_result_heading{
+	color: #fff; 
+	margin-left: auto;
+	margin-right : auto;
+}
+#no_result_para{
+	margin-top : 0px;
+	margin-left: auto;
+	margin-right : auto;
+	color : rgb(184, 184, 184);
+}
+#no_result_para_2{
+	margin-left: auto;
+	margin-right : auto;
+	color : #14AFF1;
+}
+
+#edit_invoice{
+	position: absolute;
+	top: 250px;
+	left: 40%;
+	height: 500px;
+	width: 400px;
+	background-color: #2A3E4C;
+	border-radius: 10px;
+	display:none;
+	z-index : 2;
+}
+#edit_invoice_header{
+	margin-top: 30px;
+	left:0;
+	height: 50px;
+	border: solid #1A262F;
+    border-width: 0 0 1px 0;
+    color: white;
+}
+
+#edit_invoice_heading{
+	display:inline;
+	margin-left: 20px;
+	font-size: 24px;
+}
+#edit_invoice_close{
+	float: right;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+#edit_invoice_body{
+	color: #97A1A9;
+	margin-top: 30px;
+	left:0;
+	height: 300px;
+	border: solid #1A262F;
+    border-width: 0 0 1px 0;
+}
+#invoice_amount_input{
+	width: 180px;
+	margin-right: 20px;
+}
+#invoice_amount_notes_input{
+	width: 180px;	
+	height: 150px;
+	margin-right: 20px;
+}
+#edit_invoice_body_p1{
+	display:inline;
+	margin-left: 20px;
+	position:absolute;
+	margin-top: 10px;
+}
+#edit_invoice_body_p2{
+	display:inline;
+	margin-left: 20px;
+	position:absolute;
+	margin-top: 60px;
+}
+#edit_invoice_save{
+	background-color : #14AFF1;
+	color: white;
+	border: none;
+	float:right;	
+	margin-right: 15px;
+	margin-top: 17px;
+}
+#edit_invoice_cancel{
+	background-color: transparent;
+	border: none;
+	color: #14AFF1;
+	margin-top: 17px;
+}
+#edit_invoice_reset{
+	float:right;	
+	margin-right: 15px;
+	margin-top: 17px;
+}
+
+
+#delete_invoice{
+	position: absolute;
+	top: 280px;
+	left: 33%;
+	height: 400px;
+	width: 600px;
+	background-color: #2A3E4C;
+	border-radius: 10px;
+	color: white;
+	display:none;
+	z-index : 2;
+}
+
+#delete_invoice_header{
+	margin-top: 30px;
+	left:0;
+	height: 50px;
+	border: solid #1A262F;
+    border-width: 0 0 1px 0;
+    color: white;
+}
+#delete_invoice_heading{
+	display:inline;
+	margin-left: 20px;
+	font-size: 24px;
+}
+#delete_invoice_close{
+	float: right;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+#delete_invoice_body{
+	color: #97A1A9;
+	margin-top: 30px;
+	left:0;
+	height: 200px;
+	border: solid #1A262F;
+    border-width: 0 0 1px 0;
+}
+
+#delete_invoice_body_p1{
+	display:inline;
+	margin-left: 20px;
+	position:absolute;
+	margin-top: 10px;
+}
+#delete_invoice_body_p2{
+	display:inline;
+	margin-left: 20px;
+	position:absolute;
+	margin-top: 60px;
+}
+#delete_invoice_delete{
+	background-color : #14AFF1;
+	color: white;
+	border: none;
+	float:right;	
+	margin-right: 15px;
+	margin-top: 17px;
+}
+
+#delete_invoice_cancel{
+	float:right;	
+	margin-right: 15px;
+	margin-top: 17px;
+}
+
+#perm_del{
+	color:#ff3e3e;
+}
+
+
+#add_invoice{
+	background-color: #2A3E4C;
+	height: 420px;
+	width: 800px;
+	position: absolute;
+	top: 250px;
+	left: 29%;
+	border-radius: 10px;
+	color: white;
+	display:none;
+	z-index: 2;
+}
+
+#add_invoice_header{
+	margin-top: 30px;
+	left:0;
+	height: 50px;
+	border: solid #1A262F;
+    border-width: 0 0 1px 0;
+    color: white;
+}
+
+#add_invoice_heading{
+	display:inline;
+	margin-left: 20px;
+	font-size: 24px;
+}
+#add_invoice_close{
+	float: right;
+	margin-right: 20px;
+	cursor: pointer;
+}
+#add_invoice_body{
+	color: #97A1A9;
+	left:0;
+	height: 230px;
+	border: solid #1A262F;
+    border-width: 0 0 1px 0;
+    display: flex;
+}
+#add_invoice_body_left{
+	
+	flex:50%;
+}
+#add_invoice_body_right{
+	flex:50%;
+}
+.add_invoice_row{
+	justify-content: space-between;
+	margin-top:25px;
+	margin-left:10px;
+	margin-right:10px;
+	flex-direction: row;
+}
+#ta{
+	 background-color: #283A46;
+	 color:  rgb(184, 184, 184);
+   	 border: 1px solid rgb(184, 184, 184);
+   	 border-radius: 10px;
+     padding: 8px 16px;
+     width : 170px;
+     font-size: 20px;
+     height: 100px;
+     float:right;
+}
+#ta:hover{
+	 background-color: #191919;
+	 transition: 0.9s;
+}
+
+#cname{
+	height: 15px;
+	width: 170px;
+}
+#cno{
+	height: 15px;
+	width: 170px;
+}
+#ino{
+	height: 15px;
+	width: 170px;
+}
+#ia{
+	height: 15px;
+	width: 170px;
+}
+#dd{
+	height: 15px;
+	width: 170px;
+}
+#ia{
+	height: 15px;
+	width: 170px;
+}
+
+#add_invoice_footer{
+	width: 100%;
+}
+#add_invoice_add{
+	background-color : #14AFF1;
+	color: white;
+	border: none;
+	float:right;	
+	margin-right: 15px;
+}
+#add_invoice_cancel{
+	background-color: transparent;
+	border: none;
+	color: #14AFF1;
+}
+#add_invoice_clear{
+	float:right;	
+	margin-right: 15px;
+}
+
+.req{
+	color: #ff5555;
+}
+
+input[type=date]{
+	 float: right;
+	 background-color: #283A46;
+	 color:  rgb(184, 184, 184);
+   	 border: 1px solid rgb(184, 184, 184);
+   	 border-radius: 10px;
+     padding: 8px 16px;
+     width : 200px;
+     font-size: 20px;
+     margin: 4px 2px;
+     transition-duration: 0.9s;
+     margin-left: 15px;
+     height: 20px;
+}
+
+input[type=date]:hover{
+    background-color: #191919;
+}
+
+input[type=date]:active{
+    background-color: #293d4a;
+    transition-duration: 0.1s;
+    color: white;
+}
+
+input[type=date]:focus{
+    border: 1px solid rgb(95, 183, 255);
+    outline: none;
+    color: white;
+}
+
+
+#left_nav{
+	left:20px;
+	top:50%;
+	width: 55px;
+	height: 55px;
+	background: #39495E 0% 0% no-repeat padding-box;
+	box-shadow: 0px 2px 6px #000;
+	border-radius: 100%;
+	position:absolute;
+}
+#left_nav:disabled:hover{
+	background-color:#8c0000;
+}
+#right_nav:disabled:hover{
+	background-color:#8c0000;
+}
+#right_nav{
+	right: 20px;
+	top: 50%;
+	width: 55px;
+	height: 55px;
+	background: #39495E 0% 0% no-repeat padding-box;
+	box-shadow: 0px 2px 6px #000;
+	border-radius: 100%;
+	position: absolute;
+}
+#left_nav:hover{
+	background-color: #14AFF1;
+	transition : 0.2s;
+}
+#right_nav:hover{
+	background-color: #14AFF1;
+	transition : 0.2s;
+}
+#right_nav_arrow{
+	margin-left: 2px;
+	margin-top: 2px;
+	height: 20px;
+	width: 20px;
+}
+#left_nav_arrow{
+	margin-right: 2px;
+	margin-top: 2px;
+	height: 20px;
+	width: 20px;
+}
+#overlay{
+	z-index : 1;
+	top:0;
+	left:0;
+	position : absolute;
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+	opacity: 0.85;
+	visibility : hidden;
+}
+
+.checked{
+	background-color: #2a5368 !important;
+}
+	
